@@ -1,0 +1,141 @@
+title: Welcome to uBlue
+properties:
+  mode: "run-on-change"
+screens:
+  first-screen:
+    source: yafti.screen.title
+    values:
+      title: "Welcome to UBlue Cinnamon (Alpha)"
+      icon: "/path/to/icon"
+      description: |
+        Pick some applications to get started
+  can-we-modify-your-flatpaks:
+    source: yafti.screen.consent
+    values:
+      title: Welcome, Traveler
+      show_terminal: true
+      condition:
+        run: flatpak remotes --system | grep fedora
+      description: |
+        WARNING: This will remove your existing Flatpaks if you are rebasing! 
+        If you do not want to do this, then you can exit the installer. 
+        If you accept, please wait a few seconds for the operation to complete.
+      actions:
+        - run: /usr/lib/fedora-third-party/fedora-third-party-opt-out
+        - run: /usr/bin/fedora-third-party disable
+        - run: flatpak remove --system --noninteractive --all
+        - run: flatpak remote-add --if-not-exists --user flathub https://flathub.org/repo/flathub.flatpakrepo
+  applications:
+    source: yafti.screen.package
+    values:
+      title: Application Installation
+      show_terminal: true
+      package_manager: yafti.plugin.flatpak
+      groups:
+        Core:
+          description: Core applications
+          default: true
+          packages:
+          - Backup: org.gnome.DejaDup
+          - Calculator: org.gnome.Calculator
+          - Celluloid Video Player: io.github.celluloid_player.Celluloid
+          - Disk Usage Analyzer: org.gnome.baobab
+          - Photo Organizer: org.gnome.Shotwell
+          - Fedora Media Writer: org.fedoraproject.MediaWriter
+          - Flatseal Permissions Manager: com.github.tchx84.Flatseal
+          - Mozilla Firefox: org.mozilla.firefox
+        Themes:
+          description: Cinnamon (Mint-Y) themes for flatpak apps (not supported in all apps)
+          default: true
+          packages:
+          - Mint-Y: org.gtk.Gtk3theme.Mint-Y
+          - Mint-Y-Aqua: org.gtk.Gtk3theme.Mint-Y-Aqua
+          - Mint-Y-Blue: org.gtk.Gtk3theme.Mint-Y-Blue
+          - Mint-Y-Brown: org.gtk.Gtk3theme.Mint-Y-Brown
+          - Mint-Y-Grey: org.gtk.Gtk3theme.Mint-Y-Grey
+          - Mint-Y-Dark: org.gtk.Gtk3theme.Mint-Y-Dark
+          - Mint-Y-Orange: org.gtk.Gtk3theme.Mint-Y-Orange
+          - Mint-Y-Pink: org.gtk.Gtk3theme.Mint-Y-Pink
+          - Mint-Y-Purple: org.gtk.Gtk3theme.Mint-Y-Purple
+          - Mint-Y-Red: org.gtk.Gtk3theme.Mint-Y-Red
+          - Mint-Y-Sand: org.gtk.Gtk3theme.Mint-Y-Sand
+          - Mint-Y-Teal: org.gtk.Gtk3theme.Mint-Y-Teal
+          - Mint-Y-Dark-Aqua: org.gtk.Gtk3theme.Mint-Y-Dark-Aqua
+          - Mint-Y-Dark-Blue: org.gtk.Gtk3theme.Mint-Y-Dark-Blue
+          - Mint-Y-Dark-Brown: org.gtk.Gtk3theme.Mint-Y-Dark-Brown
+          - Mint-Y-Dark-Grey: org.gtk.Gtk3theme.Mint-Y-Dark-Grey
+          - Mint-Y-Dark-Orange: org.gtk.Gtk3theme.Mint-Y-Dark-Orange
+          - Mint-Y-Dark-Pink: org.gtk.Gtk3theme.Mint-Y-Dark-Pink
+          - Mint-Y-Dark-Purple: org.gtk.Gtk3theme.Mint-Y-Dark-Purple
+          - Mint-Y-Dark-Red: org.gtk.Gtk3theme.Mint-Y-Dark-Red
+          - Mint-Y-Dark-Sand: org.gtk.Gtk3theme.Mint-Y-Dark-Sand
+          - Mint-Y-Dark-Teal: org.gtk.Gtk3theme.Mint-Y-Dark-Teal
+        Gestures:
+          description: Configure touchpad gestures
+          default: false
+          packages:
+          - Touché: com.github.joseexposito.touche
+        Web Browsers:
+          description: Additional browsers to complement Firefox
+          default: false
+          packages:
+          - Brave: com.brave.Browser
+          - Google Chrome: com.google.Chrome
+          - Microsoft Edge: com.microsoft.Edge
+          - Opera: com.opera.Opera
+        Communication:
+          description: Apps for emails, chatting, and sharing
+          default: false
+          packages:
+          - HexChat: io.github.Hexchat
+          - Pidgin: im.pidgin.Pidgin
+          - Thunderbird Email: org.mozilla.Thunderbird
+          - Transmission: com.transmissionbt.Transmission
+        Productivity:
+          description: Create papers, spreadsheets, or code
+          default: false
+          packages:
+          - LibreOffice: org.libreoffice.LibreOffice
+          - Obsidian: md.obsidian.Obsidian
+          - OnlyOffice: org.onlyoffice.desktopeditors
+          - Slack: com.slack.Slack
+          - Standard Notes: org.standardnotes.standardnotes
+          - Thunderbird Email: org.mozilla.Thunderbird
+          - Visual Studio Code: com.visualstudio.code
+        Gaming:
+          description: Game on!
+          default: false
+          packages:
+          - Bottles: com.usebottles.bottles
+          - Discord: com.discordapp.Discord
+          - Games: org.gnome.Games
+          - Heroic Games Launcher: com.heroicgameslauncher.hgl
+          - MangoHUD: org.freedesktop.Platform.VulkanLayer.MangoHud//22.08
+          - Steam: com.valvesoftware.Steam
+          - Gamescope for Steam: com.valvesoftware.Steam.Utility.gamescope
+          - Proton Updater for Steam: net.davidotek.pupgui2
+        Streaming:
+          description: Stream to the Internet
+          default: false
+          packages:
+          - OBS Studio: com.obsproject.Studio
+          - VkCapture for OBS: com.obsproject.Studio.OBSVkCapture 
+          - Gstreamer for OBS: com.obsproject.Studio.Plugin.Gstreamer
+          - Gstreamer VAAPI for OBS: com.obsproject.Studio.Plugin.GStreamerVaapi
+          - Boatswain for Streamdeck: com.feaneron.Boatswain
+          
+  final-screen:
+    source: yafti.screen.title
+    values:
+      title: "All done!"
+      icon: "/path/to/icon"
+      links:
+        - "Install More Applications": 
+            run: /usr/bin/gnome-software
+        - "Website":
+            run: /usr/bin/xdg-open https://ublue.it
+        - "Join the Discord Community":
+            run: /usr/bin/xdg-open https://discord.gg/XjG48C7VHx 
+      description: |
+        Thanks for trying UBlue Cinnamon. We hope you enjoy it! 
+        You may need to reboot before installed apps will appear in the menu.

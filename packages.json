@@ -1,0 +1,90 @@
+{
+    "all": {
+        "include": {
+            "all": [
+		"gdm",
+                "python3-pip",
+		"deepin-control-center",
+		"deepin-desktop",
+		"deepin-desktop-base",
+		"deepin-desktop-schemas",
+		"deepin-dock",
+		"deepin-dock-onboard-plugin",
+		"deepin-session-shell",
+		"deepin-terminal",
+		"deepin-file-manager",
+		"deepin-icon-theme",
+		"deepin-gtk-theme",
+		"deepin-topbar",
+		"deepin-kwin",
+		"deepin-launcher",
+		"deepin-menu",
+		"deepin-network-utils",
+		"deepin-polkit-agent",
+		"deepin-session-shell",
+		"deepin-wayland",
+		"deepin-daemon",
+		"deepin-screensaver",
+		"deepin-system-monitor",
+		"deepin-file-manager",
+		"deepin-wallpapers",
+		"startdde",
+	        "NetworkManager-adsl",
+                "NetworkManager-bluetooth",
+                "NetworkManager-iodine-gnome",
+                "NetworkManager-l2tp-gnome",
+                "NetworkManager-libreswan-gnome",
+                "NetworkManager-openconnect-gnome",
+                "NetworkManager-openvpn-gnome",
+                "NetworkManager-ppp",
+                "NetworkManager-pptp-gnome",
+                "NetworkManager-vpnc-gnome",
+                "NetworkManager-wifi",
+                "NetworkManager-wwan",
+                "abrt-desktop",
+                "abrt-java-connector",
+                "blueman",
+                "firewall-config",
+                "gstreamer1-plugins-ugly-free",
+                "gvfs-archive",
+                "gvfs-gphoto2",
+                "gvfs-mtp",
+                "gvfs-smb",
+                "imsettings-gsettings",
+                "initial-setup-gui",
+                "nm-connection-editor",
+                "pipewire-alsa",
+                "pipewire-pulseaudio",
+                "qgnomeplatform-qt5",
+                "sane-backends-drivers-scanners",
+                "setroubleshoot",
+                "system-config-printer",
+                "xdg-user-dirs-gtk"
+            ]
+        },
+        "exclude": {
+            "all": [
+                "firefox",
+                "firefox-langpacks"
+            ]
+        }
+    },
+    "37": {
+        "include": {
+            "all": [
+	    ]
+        },
+        "exclude": {
+            "all": []
+        }
+    },
+    "38": {
+        "include": {
+            "all": []
+        },
+        "exclude": {
+            "all": [
+	    ]
+        }
+    }
+}
