@@ -40,7 +40,7 @@ jobs:
         uses: ublue-os/isogenerator@v2.0.2
         id: isogenerator
         with:
-          image-name: cinnamon
+          image-name: deepin
           installer-repo: releases
           installer-major-version: 38
           boot-menu-path: boot_menu.yml
