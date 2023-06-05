@@ -2,6 +2,12 @@
     "all": {
         "include": {
             "all": [
+                "deepin-api",
+                "chromium",
+                "dtkwm",
+                "dtkgui",
+                "dtkcore",
+                "dtkwidget",
                 "pavucontrol",
                 "gnome-software",
                 "deepin-account-faces",
@@ -14,34 +20,34 @@
                 "deepin-sound-theme",
                 "deepin-shortcut-viewer",
                 "deepin-calculator",
-		        "deepin-desktop",
-		        "lightdm",
+                "deepin-desktop",
+                "lightdm",
                 "python3-pip",
-		        "deepin-control-center",
-		        "deepin-desktop",
-		        "deepin-desktop-base",
-		        "deepin-desktop-schemas",
-		        "deepin-dock",
-		        "deepin-dock-onboard-plugin",
-		        "deepin-session-shell",
-		        "deepin-terminal",
-		        "deepin-file-manager",
-		        "deepin-icon-theme",
-		        "deepin-gtk-theme",
-		        "deepin-topbar",
-		        "deepin-kwin",
-		        "deepin-launcher",
-		        "deepin-menu",
-		        "deepin-network-utils",
-		        "deepin-polkit-agent",
-		        "deepin-session-shell",
-		        "deepin-wayland",
-		        "deepin-daemon",
-		        "deepin-screensaver",
-		        "deepin-system-monitor",
-		        "deepin-file-manager",
-		        "deepin-wallpapers",
-		        "startdde", 
+                "deepin-control-center",
+                "deepin-desktop",
+                "deepin-desktop-base",
+                "deepin-desktop-schemas",
+                "deepin-dock",
+                "deepin-dock-onboard-plugin",
+                "deepin-session-shell",
+                "deepin-terminal",
+                "deepin-file-manager",
+                "deepin-icon-theme",
+                "deepin-gtk-theme",
+                "deepin-topbar",
+                "deepin-kwin",
+                "deepin-launcher",
+                "deepin-menu",
+                "deepin-network-utils",
+                "deepin-polkit-agent",
+                "deepin-session-shell",
+                "deepin-wayland",
+                "deepin-daemon",
+                "deepin-screensaver",
+                "deepin-system-monitor",
+                "deepin-file-manager",
+                "deepin-wallpapers",
+                "startdde",
                 "pipewire-alsa",
                 "pipewire-pulseaudio",
                 "firewall-config",
@@ -70,8 +76,7 @@
     },
     "37": {
         "include": {
-            "all": [
-	    ]
+            "all": []
         },
         "exclude": {
             "all": []
@@ -82,8 +87,7 @@
             "all": []
         },
         "exclude": {
-            "all": [
-	    ]
+            "all": []
         }
     }
 }
