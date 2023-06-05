@@ -29,9 +29,7 @@ FROM fedora:38 as deepinList
 
 # Try to get a list of unversioned packages
 RUN dnf group info \
-        deepin-desktop \
         deepin-desktop-environment \
-	deepin-applications \
     | awk '/^  /' \
     | xargs dnf group info -v  2>/dev/null \
     | awk '($2 == "fedora" || $2 == "updates" || $2 == "@System") && ($1 ~ /noarch/ || $1 ~ /x86_64/){print $1}' \
