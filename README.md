@@ -15,7 +15,3 @@ or if you have an NVIDIA GPU:
     rpm-ostree rebase ostree-unverified-registry:ghcr.io/tulilirockz/deepin-nvidia:38
 
 <br>
-
-## Caveats
-
-- Apparently disabling SELinux is necessary for the DDE to work
