@@ -3,7 +3,6 @@
         "include": {
             "all": [
                 "deepin-api",
-                "chromium",
                 "dtkwm",
                 "dtkgui",
                 "dtkcore",
@@ -48,8 +47,6 @@
                 "deepin-file-manager",
                 "deepin-wallpapers",
                 "startdde",
-                "pipewire-alsa",
-                "pipewire-pulseaudio",
                 "firewall-config",
                 "gnome-disk-utility",
                 "nm-connection-editor",
