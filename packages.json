@@ -2,7 +2,7 @@
     "all": {
         "include": {
             "all": [
-		"gdm",
+		"lightdm",
                 "python3-pip",
 		"deepin-control-center",
 		"deepin-desktop",
