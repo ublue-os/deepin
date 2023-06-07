@@ -5,7 +5,7 @@ screens:
   first-screen:
     source: yafti.screen.title
     values:
-      title: "Welcome to UBlue Cinnamon (Alpha)"
+      title: "Welcome to UBlue Deepin (Alpha)"
       icon: "/path/to/icon"
       description: |
         Pick some applications to get started
@@ -44,32 +44,6 @@ screens:
           - Fedora Media Writer: org.fedoraproject.MediaWriter
           - Flatseal Permissions Manager: com.github.tchx84.Flatseal
           - Mozilla Firefox: org.mozilla.firefox
-        Themes:
-          description: Cinnamon (Mint-Y) themes for flatpak apps (not supported in all apps)
-          default: true
-          packages:
-          - Mint-Y: org.gtk.Gtk3theme.Mint-Y
-          - Mint-Y-Aqua: org.gtk.Gtk3theme.Mint-Y-Aqua
-          - Mint-Y-Blue: org.gtk.Gtk3theme.Mint-Y-Blue
-          - Mint-Y-Brown: org.gtk.Gtk3theme.Mint-Y-Brown
-          - Mint-Y-Grey: org.gtk.Gtk3theme.Mint-Y-Grey
-          - Mint-Y-Dark: org.gtk.Gtk3theme.Mint-Y-Dark
-          - Mint-Y-Orange: org.gtk.Gtk3theme.Mint-Y-Orange
-          - Mint-Y-Pink: org.gtk.Gtk3theme.Mint-Y-Pink
-          - Mint-Y-Purple: org.gtk.Gtk3theme.Mint-Y-Purple
-          - Mint-Y-Red: org.gtk.Gtk3theme.Mint-Y-Red
-          - Mint-Y-Sand: org.gtk.Gtk3theme.Mint-Y-Sand
-          - Mint-Y-Teal: org.gtk.Gtk3theme.Mint-Y-Teal
-          - Mint-Y-Dark-Aqua: org.gtk.Gtk3theme.Mint-Y-Dark-Aqua
-          - Mint-Y-Dark-Blue: org.gtk.Gtk3theme.Mint-Y-Dark-Blue
-          - Mint-Y-Dark-Brown: org.gtk.Gtk3theme.Mint-Y-Dark-Brown
-          - Mint-Y-Dark-Grey: org.gtk.Gtk3theme.Mint-Y-Dark-Grey
-          - Mint-Y-Dark-Orange: org.gtk.Gtk3theme.Mint-Y-Dark-Orange
-          - Mint-Y-Dark-Pink: org.gtk.Gtk3theme.Mint-Y-Dark-Pink
-          - Mint-Y-Dark-Purple: org.gtk.Gtk3theme.Mint-Y-Dark-Purple
-          - Mint-Y-Dark-Red: org.gtk.Gtk3theme.Mint-Y-Dark-Red
-          - Mint-Y-Dark-Sand: org.gtk.Gtk3theme.Mint-Y-Dark-Sand
-          - Mint-Y-Dark-Teal: org.gtk.Gtk3theme.Mint-Y-Dark-Teal
         Gestures:
           description: Configure touchpad gestures
           default: false
@@ -137,5 +111,5 @@ screens:
         - "Join the Discord Community":
             run: /usr/bin/xdg-open https://discord.gg/XjG48C7VHx 
       description: |
-        Thanks for trying UBlue Cinnamon. We hope you enjoy it! 
+        Thanks for trying UBlue Deepin. We hope you enjoy it! 
         You may need to reboot before installed apps will appear in the menu.
