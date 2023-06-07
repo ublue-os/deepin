@@ -2,6 +2,7 @@
     "all": {
         "include": {
             "all": [
+		"deepin-picker",
 		"pulseaudio",
                 "deepin-api",
                 "dtkwm",
