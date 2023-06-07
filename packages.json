@@ -2,6 +2,7 @@
     "all": {
         "include": {
             "all": [
+		"pulseaudio",
                 "deepin-api",
                 "dtkwm",
                 "dtkgui",
@@ -52,20 +53,15 @@
                 "nm-connection-editor",
                 "NetworkManager-adsl",
                 "NetworkManager-bluetooth",
-                "NetworkManager-iodine-gnome",
-                "NetworkManager-l2tp-gnome",
-                "NetworkManager-libreswan-gnome",
-                "NetworkManager-openconnect-gnome",
-                "NetworkManager-openvpn-gnome",
                 "NetworkManager-ppp",
-                "NetworkManager-pptp-gnome",
-                "NetworkManager-vpnc-gnome",
                 "NetworkManager-wifi",
                 "NetworkManager-wwan"
             ]
         },
         "exclude": {
             "all": [
+		"pipewire-pulseaudio",
+		"pipewire-alsa",
                 "firefox",
                 "firefox-langpacks"
             ]
