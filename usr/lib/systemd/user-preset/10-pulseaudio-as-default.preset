@@ -1,0 +1,2 @@
+enable pulseaudio.service
+mask pipewire.service
