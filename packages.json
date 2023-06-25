@@ -62,7 +62,10 @@
             ]
         },
         "exclude": {
-            "all": []
+            "all": [
+                "pipewire-alsa",
+                "pipewire-pulseaudio"
+            ]
         }
     },
     "37": {
