@@ -2,8 +2,10 @@
     "all": {
         "include": {
             "all": [
-		"deepin-picker",
-		"pulseaudio",
+                "samba",
+                "deepin-account-faces",
+                "deepin-picker",
+                "pulseaudio",
                 "deepin-api",
                 "dtkwm",
                 "dtkgui",
@@ -60,12 +62,7 @@
             ]
         },
         "exclude": {
-            "all": [
-		"pipewire-pulseaudio",
-		"pipewire-alsa",
-                "firefox",
-                "firefox-langpacks"
-            ]
+            "all": []
         }
     },
     "37": {
