@@ -2,7 +2,9 @@
 
 **This image is experimental**
 
-[![release-please](https://github.com/ublue-os/deepin/actions/workflows/release-please.yml/badge.svg)](https://github.com/ublue-os/deepin/actions/workflows/release-please.yml)
+[![build](https://github.com/ublue-os/deepin/actions/workflows/build.yml/badge.svg)](https://github.com/ublue-os/deepin/actions/workflows/build.yml)
+
+![Deepin Desktop Showcase Image](deepin-showcase.png)
 
 To try this image, you can use an existing Fedora Silverblue install.
 
@@ -13,5 +15,3 @@ To try this image, you can use an existing Fedora Silverblue install.
 or if you have an NVIDIA GPU:
 
     rpm-ostree rebase ostree-unverified-registry:ghcr.io/ublue-os/deepin-nvidia:38
-
-<br>
