@@ -17,7 +17,6 @@ ADD packages.json /tmp/packages.json
 ADD build.sh /tmp/build.sh
 
 RUN /tmp/build.sh && \
-    pip install --prefix=/usr yafti && \
     rm -rf /tmp/* /var/* && \
     systemctl enable lightdm && \
     systemctl enable ublue-lightdm-workaround && \
