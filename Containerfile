@@ -6,17 +6,15 @@ ARG FEDORA_MAJOR_VERSION="${FEDORA_MAJOR_VERSION:-38}"
 
 FROM ${BASE_IMAGE}:${FEDORA_MAJOR_VERSION} AS builder
 
-COPY etc /etc
 COPY usr /usr
-RUN chmod +x /etc/ublue-lightdm-workaround.sh
-
 ARG IMAGE_NAME="${IMAGE_NAME}"
 ARG FEDORA_MAJOR_VERSION="${FEDORA_MAJOR_VERSION}"
 
 ADD packages.json /tmp/packages.json
 ADD build.sh /tmp/build.sh
 
-RUN /tmp/build.sh && \
+RUN chmod +x /usr/etc/ublue-lightdm-workaround.sh && \
+    /tmp/build.sh && \
     rm -rf /tmp/* /var/* && \
     systemctl enable lightdm && \
     systemctl enable ublue-lightdm-workaround && \
