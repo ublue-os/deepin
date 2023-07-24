@@ -14,6 +14,8 @@ ADD packages.json /tmp/packages.json
 ADD build.sh /tmp/build.sh
 
 RUN chmod +x /usr/etc/ublue-lightdm-workaround.sh && \
+    cp /usr/etc/ublue-lightdm-workaround.sh /etc/ && \
+    cp /usr/etc/systemd/system/ublue-lightdm-workaround.service /etc/systemd/system/ && \
     /tmp/build.sh && \
     rm -rf /tmp/* /var/* && \
     systemctl enable lightdm && \
