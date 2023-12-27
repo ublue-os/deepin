@@ -36,7 +36,6 @@
                 "deepin-file-manager",
                 "deepin-icon-theme",
                 "deepin-gtk-theme",
-                "deepin-topbar",
                 "deepin-kwin",
                 "deepin-launcher",
                 "deepin-menu",
@@ -77,7 +76,9 @@
     },
     "38": {
         "include": {
-            "all": []
+            "all": [
+                "deepin-topbar"
+            ]
         },
         "exclude": {
             "all": []

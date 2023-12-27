@@ -1,7 +1,7 @@
 name: Build and Push Image
 on:
   pull_request:
-  merge_group:    
+  merge_group:
   schedule:
     - cron: '20 22 * * *'  # 10:20pm everyday
   workflow_dispatch:
@@ -20,13 +20,21 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        image_flavor: [main, nvidia]
-        major_version: [38]
+        image_flavor: [main, nvidia, asus, asus-nvidia, framework, surface, surface-nvidia]
+        major_version: [38, 39]
         include:
+          - major_version: 39
+            is_latest_version: true
+            is_stable_version: false
+            is_gts_version: false
           - major_version: 38
-            is_latest_version: false
+            is_latest_version: true
             is_stable_version: true
-    steps: 
+            is_gts_version: true
+    steps:
+      - name: Maximize build space
+        uses: ublue-os/remove-unwanted-software@v6
+
       # Checkout push-to-registry action GitHub repository
       - name: Checkout Push to Registry action
         uses: actions/checkout@v4
@@ -63,6 +71,8 @@ jobs:
           if [[ "${{ matrix.is_latest_version }}" == "true" ]] && \
              [[ "${{ matrix.is_stable_version }}" == "true" ]]; then
               BUILD_TAGS+=("latest")
+          elif [[ "${{ matrix.is_gts_version }}" == "true" ]]; then
+              BUILD_TAGS+=("gts")
           fi
 
           if [[ "${{ github.event_name }}" == "pull_request" ]]; then
@@ -96,7 +106,7 @@ jobs:
           labels: |
             org.opencontainers.image.title=${{ env.IMAGE_NAME }}
             org.opencontainers.image.version=${{ steps.labels.outputs.VERSION }}
-            org.opencontainers.image.description=
+            org.opencontainers.image.description=A Linux desktop featuring a traditional layout, built from modern technology and introducing brand new innovative features
             io.artifacthub.package.readme-url=https://raw.githubusercontent.com/ublue-os/deepin/deepin/README.md
             io.artifacthub.package.logo-url=https://avatars.githubusercontent.com/u/120078124?s=200&v=4
 
@@ -167,4 +177,12 @@ jobs:
         if: github.event_name != 'pull_request'
         run: |
           echo "${{ toJSON(steps.push.outputs) }}"
-
+          
+  check:
+    name: Check all builds successful
+    runs-on: ubuntu-latest
+    needs: [push-ghcr]
+    steps:
+      - name: Exit
+        shell: bash
+        run: exit 0
