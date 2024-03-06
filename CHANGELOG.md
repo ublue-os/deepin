@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.0](https://github.com/ublue-os/deepin/compare/v1.0.0...v1.1.0) (2024-02-05)
+
+
+### Features
+
+* add f39 build + builds for asus framework (...) and GTS ([fb930db](https://github.com/ublue-os/deepin/commit/fb930db55e2ee6180720ed823f7232a0b485350c))
+
 ## 1.0.0 (2023-12-05)
 
 
